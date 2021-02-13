@@ -56,4 +56,60 @@ List<Product> products = [
     description:
     "CPU : Intel Core i7-10750H\nRAM : 16 GB DDR4 3200MHz\nSTORAGE : 1TB 5400 +256GB PCIe/NVMe M.2 SSD\nDISPLAY : 15.6\" FULL HD IPS ANTI-GLARE 120Hz\nVGA : NVIDIA GEFORCE GTX1650Ti 4 GB GDDR6\nOS : WINDOWS 10 HOME",
   ),
+  Product(
+    id: 5,
+    price: 6990,
+    title: "LOGITECH G G915 TKL WIRELESS (WHITE)",
+    image: "assets/images/Item4.png",
+    description:
+    "Switch : GL Tactile Switch\nLighting : RGB\nKeycap Font : English\nConnectivity : Lightspeed Wireless or Bluetooth",
+  ),
+  Product(
+    id: 6,
+    price: 2990,
+    title: "LOGITECH G G512",
+    image: "assets/images/Item5.png",
+    description:
+    "FEATURES : GX BROWN TACTILE SWITCH",
+  ),
+  Product(
+    id: 7,
+    price: 3890,
+    title: "LOGITECH G PRO WIRELESS (BLACK)",
+    image: "assets/images/Item6.png",
+    description:
+    "OPTICAL SENSOR : 16000 DPI\nSUPPORT : PC WITH USB PORT",
+  ),
+  Product(
+    id: 8,
+    price: 4190,
+    title: "LOGITECH G903 16000 DPI WIRELESS HERO",
+    image: "assets/images/Item7.png",
+    description:
+    "OPTICAL SENSOR : 16000 DPI\nSUPPORT : PC WITH USB PORT",
+  ),
+  Product(
+    id: 9,
+    price: 3990,
+    title: "LOGITECH G502 LIGHTSPEED WIRELESS",
+    image: "assets/images/Item8.png",
+    description:
+    "CPU : Intel Core i7-10750H\nRAM : 16 GB DDR4 3200MHz\nSTORAGE : 1TB 5400 +256GB PCIe/NVMe M.2 SSD\nDISPLAY : 15.6\" FULL HD IPS ANTI-GLARE 120Hz\nVGA : NVIDIA GEFORCE GTX1650Ti 4 GB GDDR6\nOS : WINDOWS 10 HOME",
+  ),
+  Product(
+    id: 10,
+    price: 3990,
+    title: "LOGITECH GAMING GEAR G933S WIRELESS RGB 7.1 SURROUND WHITE",
+    image: "assets/images/Item9.png",
+    description:
+    "HEADSET RESPONSE : 20 Hz - 20000 Hz\nMIC RESPONSE : 100 Hz - 10000 Hz",
+  ),
+  Product(
+    id: 11,
+    price: 4790,
+    title: "LOGITECH G G733 LIGHTSPEED WIRELESS (WHITE)",
+    image: "assets/images/Item10.png",
+    description:
+    "HEADSET RESPONSE : 20 Hz - 20000 Hz\nMIC RESPONSE : 100 Hz - 10000 Hz",
+  ),
 ];

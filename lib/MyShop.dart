@@ -5,6 +5,9 @@ import './Product.dart';
 
 class MyShop extends StatelessWidget {
 
+  int totalItems = 0;
+  int totalPrice = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +51,14 @@ class MyShop extends StatelessWidget {
     // Create button
     Widget addToCartButton = TextButton(
       child: Text("Add to Cart"),
-      onPressed: () => showSuccessfulDialog(context),
+      onPressed: () {
+        showSuccessfulDialog(context);
+        if(totalItems > 0){
+          ScaffoldMessenger.of(context).removeCurrentSnackBar();
+        }
+        totalItems++;
+        totalPrice += product.price;
+      },
     );
 
     Widget backButton = TextButton(
@@ -85,6 +95,12 @@ class MyShop extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).pop();
         Navigator.of(context).pop();
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content: Text('${totalItems} items in the cart.\t\t฿${totalPrice}'),
+              duration: Duration(days: 365),
+          )
+        );
       },
     );
 
