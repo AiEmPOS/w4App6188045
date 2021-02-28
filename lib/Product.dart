@@ -94,7 +94,7 @@ List<Product> products = [
     title: "LOGITECH G502 LIGHTSPEED WIRELESS",
     image: "assets/images/Item8.png",
     description:
-    "CPU : Intel Core i7-10750H\nRAM : 16 GB DDR4 3200MHz\nSTORAGE : 1TB 5400 +256GB PCIe/NVMe M.2 SSD\nDISPLAY : 15.6\" FULL HD IPS ANTI-GLARE 120Hz\nVGA : NVIDIA GEFORCE GTX1650Ti 4 GB GDDR6\nOS : WINDOWS 10 HOME",
+    "OPTICAL SENSOR : 16000 DPI\nSUPPORT : PC WITH USB PORT\nHyper-fast scroll wheel\nPOWERPLAY compatible\nOnboard memory\nLIGHTSYNC RGB: 2 zone\nMechanical Button Tensioning System\nZero smoothing/acceleration/filtering",
   ),
   Product(
     id: 10,
