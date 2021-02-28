@@ -61,13 +61,13 @@ class ProductContainer extends StatelessWidget {
                 tag: '${product.id}',
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 20),
-                  height: 160,
+                  height: 180,
                   // image is square but we add extra 20 + 20 padding thats why width is 200
-                  width: 200,
+                  width: 160,
                   child: Image.asset(
                     product.image,
-                    fit: BoxFit.fitWidth,
 
+                    fit: BoxFit.fitWidth,
                   ),
                 ),
               ),
