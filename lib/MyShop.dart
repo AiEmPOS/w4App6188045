@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 import './ProductContainer.dart';
 import './Product.dart';
+import './ProductDetail.dart';
 
 class MyShop extends StatelessWidget {
 
-  int totalItems = 0;
-  int totalPrice = 0;
+  static int totalItems = 0;
+  static int totalPrice = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,18 @@ class MyShop extends StatelessWidget {
                     itemBuilder: (context, index) => ProductContainer(
                       itemIndex: index,
                       product: products[index],
-                      press: () => showProductDetail(context, products[index]),
+                      press: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProductDetail(
+                                product: products[index],
+                              )
+                          )
+                        );
+                        ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                        /*showProductDetail(context, products[index])*/
+                      },
                     ),
                   )
                 ],
