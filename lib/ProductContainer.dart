@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './Product.dart';
 
+
 class ProductContainer extends StatelessWidget {
   const ProductContainer({
     Key key,
@@ -28,7 +29,6 @@ class ProductContainer extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(
         horizontal: 20,
-        vertical: 10, // 20 / 2
       ),
       // color: Colors.blueAccent,
       height: 160,
@@ -66,7 +66,6 @@ class ProductContainer extends StatelessWidget {
                   width: 160,
                   child: Image.asset(
                     product.image,
-
                     fit: BoxFit.fitWidth,
                   ),
                 ),

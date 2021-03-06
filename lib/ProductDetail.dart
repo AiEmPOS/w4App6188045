@@ -6,10 +6,12 @@ import 'MyShop.dart';
 class ProductDetail extends StatelessWidget{
 
   final Product product;
+  final int index;
 
   const ProductDetail({
     Key key,
-    this.product
+    this.product,
+    this.index,
   }) : super(key: key);
 
   @override
@@ -117,7 +119,6 @@ class ProductDetail extends StatelessWidget{
                     SizedBox(height: 20.0),
                     Container(
                       width: double.infinity,
-                      alignment: Alignment.center,
                       child: TextButton(
                         style: TextButton.styleFrom(
                           primary:  Color(0xFF40BAD5),
@@ -132,7 +133,7 @@ class ProductDetail extends StatelessWidget{
                             ],
                           ),
                         ),
-                        onPressed: () => showProductDetail(context, product),
+                        onPressed: () => showProductDetail(context, product, index),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -153,7 +154,7 @@ class ProductDetail extends StatelessWidget{
     );
   }
 
-  showProductDetail(BuildContext context, Product product) {
+  showProductDetail(BuildContext context, Product product, int index) {
     // Create button
     Widget addToCartButton = TextButton(
       child: Text("Add to Cart"),
@@ -164,6 +165,7 @@ class ProductDetail extends StatelessWidget{
         }
         MyShop.totalItems++;
         MyShop.totalPrice += product.price;
+        MyShop.selectedIndex.add(index);
       },
     );
 

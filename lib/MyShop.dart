@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:w4app6188045/ShoppingCart.dart';
 
 import './ProductContainer.dart';
 import './Product.dart';
@@ -8,10 +9,33 @@ class MyShop extends StatelessWidget {
 
   static int totalItems = 0;
   static int totalPrice = 0;
+  static var selectedIndex = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFF40BAD5),
+        centerTitle: false,
+        title: Text(
+          '6188045 Computer Shop',
+          style: Theme.of(context).textTheme.bodyText2,
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.shopping_cart),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ShoppingCart()
+                  )
+              );
+              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+            },
+          ),
+        ],
+      ),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -42,6 +66,7 @@ class MyShop extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => ProductDetail(
                                 product: products[index],
+                                index: index,
                               )
                           )
                         );
