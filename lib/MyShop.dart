@@ -4,15 +4,39 @@ import 'package:w4app6188045/ShoppingCart.dart';
 import './ProductContainer.dart';
 import './Product.dart';
 import './ProductDetail.dart';
+import './ProductJ.dart';
 
-class MyShop extends StatelessWidget {
+class MyShop extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyShopState();
+  }
+}
+
+class MyShopState extends State<MyShop> {
 
   static int totalItems = 0;
   static int totalPrice = 0;
   static var selectedIndex = [];
+  bool start = true;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    var fetcher = fetchProductJ();
+  }
 
   @override
   Widget build(BuildContext context) {
+
+    // if(start){
+    //   fetchProductJ();
+    //   start = false;
+    // }
+    print(ProductJ.productsJ);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF40BAD5),
@@ -56,10 +80,10 @@ class MyShop extends StatelessWidget {
                     ),
                   ),
                   ListView.builder(
-                    itemCount: products.length,
+                    itemCount: ProductJ.productsJ.length,
                     itemBuilder: (context, index) => ProductContainer(
                       itemIndex: index,
-                      product: products[index],
+                      product: ProductJ.productsJ[index],
                       press: () {
                         Navigator.push(
                           context,

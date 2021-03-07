@@ -23,7 +23,7 @@ class ShoppingCartState extends State<ShoppingCart>{
   @override
   Widget build(BuildContext context) {
     if(start) {
-      for (int i = 0; i < MyShop.selectedIndex.length; i++) {
+      for (int i = 0; i < MyShopState.selectedIndex.length; i++) {
         hasBeenPressed.add(0);
       }
       start = false;
@@ -62,7 +62,7 @@ class ShoppingCartState extends State<ShoppingCart>{
                     ),
                   ),
                   ListView.builder(
-                    itemCount: MyShop.selectedIndex.length,
+                    itemCount: MyShopState.selectedIndex.length,
                     itemBuilder: (context, index) => Container(
                       color: hasBeenPressed[index] == 0? Colors.white : Colors.tealAccent,
                       child: InkWell(
@@ -75,17 +75,17 @@ class ShoppingCartState extends State<ShoppingCart>{
                             }
                             print(hasBeenPressed);
                             if(hasBeenPressed[index] == 1){
-                              totalPrice += products[MyShop.selectedIndex[index]].price;
+                              totalPrice += products[MyShopState.selectedIndex[index]].price;
                               numSelected++;
                             }else{
-                              totalPrice -= products[MyShop.selectedIndex[index]].price;
+                              totalPrice -= products[MyShopState.selectedIndex[index]].price;
                               numSelected--;
                             }
                           });
                         },
                         child: ProductContainer(
                           itemIndex: index,
-                          product: products[MyShop.selectedIndex[index]],
+                          product: products[MyShopState.selectedIndex[index]],
                         ),
                       ),
                     ),
@@ -112,15 +112,15 @@ class ShoppingCartState extends State<ShoppingCart>{
                         onPressed: (){
                           int numRemoved = 0;
                           showSuccessfulDialog(context);
-                          MyShop.totalItems -= numSelected;
-                          MyShop.totalPrice -= totalPrice;
-                          print(MyShop.selectedIndex);
+                          MyShopState.totalItems -= numSelected;
+                          MyShopState.totalPrice -= totalPrice;
+                          print(MyShopState.selectedIndex);
                           for(int i = 0; i < hasBeenPressed.length; i++){
                             if(hasBeenPressed[i] == 1){
-                              MyShop.selectedIndex.removeAt(i - numRemoved++);
+                              MyShopState.selectedIndex.removeAt(i - numRemoved++);
                             }
                           }
-                          print(MyShop.selectedIndex);
+                          print(MyShopState.selectedIndex);
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -151,7 +151,7 @@ class ShoppingCartState extends State<ShoppingCart>{
         Navigator.of(context).pop();
         ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('${MyShop.totalItems} items in the cart.\t\t฿${MyShop.totalPrice}'),
+              content: Text('${MyShopState.totalItems} items in the cart.\t\t฿${MyShopState.totalPrice}'),
               duration: Duration(days: 365),
             )
         );

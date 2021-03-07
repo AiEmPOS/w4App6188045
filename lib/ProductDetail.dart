@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'Product.dart';
-import 'MyShop.dart';
+import './Product.dart';
+import './MyShop.dart';
 
 class ProductDetail extends StatelessWidget{
 
@@ -160,12 +160,12 @@ class ProductDetail extends StatelessWidget{
       child: Text("Add to Cart"),
       onPressed: () {
         showSuccessfulDialog(context);
-        if(MyShop.totalItems > 0){
+        if(MyShopState.totalItems > 0){
           ScaffoldMessenger.of(context).removeCurrentSnackBar();
         }
-        MyShop.totalItems++;
-        MyShop.totalPrice += product.price;
-        MyShop.selectedIndex.add(index);
+        MyShopState.totalItems++;
+        MyShopState.totalPrice += product.price;
+        MyShopState.selectedIndex.add(index);
       },
     );
 
@@ -205,7 +205,7 @@ class ProductDetail extends StatelessWidget{
         Navigator.of(context).pop();
         ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('${MyShop.totalItems} items in the cart.\t\t฿${MyShop.totalPrice}'),
+              content: Text('${MyShopState.totalItems} items in the cart.\t\t฿${MyShopState.totalPrice}'),
               duration: Duration(days: 365),
             )
         );

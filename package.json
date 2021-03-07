@@ -1,0 +1,27 @@
+{
+  "name": "w4app6188045",
+  "version": "1.0.0",
+  "description": "A new Flutter project.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AiEmPOS/w4App6188045.git"
+  },
+  "author": "AiEmPOS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AiEmPOS/w4App6188045/issues"
+  },
+  "homepage": "https://github.com/AiEmPOS/w4App6188045#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
